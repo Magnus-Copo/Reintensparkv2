@@ -1,0 +1,227 @@
+@import "tailwindcss";
+
+:root {
+  --color-primary-hex: #39ff14;
+  --color-primary-soft: #b9ff7e;
+  --color-bg: #010409;
+  --color-panel: #050c18;
+  --color-panel-soft: #0b1524;
+  --color-muted: #99a5c2;
+  --color-border: rgba(255, 255, 255, 0.12);
+  --glow: rgba(57, 255, 20, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-surface: var(--color-panel);
+  --color-card: var(--color-panel-soft);
+  --color-muted: var(--color-muted);
+  --color-primary: var(--color-primary-hex);
+  --radius-card: 32px;
+  --shadow-neon-soft: 0 0 20px rgba(57, 255, 20, 0.3);
+  --shadow-neon-strong: 0 0 40px rgba(57, 255, 20, 0.6);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-space-grotesk);
+  --font-brand: var(--font-unbounded);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Performance optimizations */
+img, video, iframe {
+  content-visibility: auto;
+}
+
+/* GPU acceleration for animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 20%, rgba(57, 255, 20, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.15), transparent 45%),
+    #010409;
+  color: white;
+  font-family: var(--font-poppins), "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.02),
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.015),
+      rgba(255, 255, 255, 0.015) 1px,
+      transparent 1px,
+      transparent 80px
+    );
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(57, 255, 20, 0.4);
+  color: #010409;
+}
+
+.site-shell {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+.site-shell__glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(57, 255, 20, 0.35), transparent 45%),
+    radial-gradient(circle at 85% 30%, rgba(12, 215, 255, 0.25), transparent 40%);
+  filter: blur(80px);
+  opacity: 0.4;
+  z-index: -2;
+}
+
+.site-main {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 4vw, 5.5rem);
+  width: min(98vw, 1600px);
+  margin-inline: auto;
+  padding-inline: clamp(0.75rem, 3vw, 2rem);
+  padding-top: clamp(5rem, 6vw, 6rem);
+  padding-bottom: clamp(4rem, 6vw, 7rem);
+}
+
+.glass-panel {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.nav-link {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #010409;
+  background: var(--color-primary);
+  border-color: transparent;
+  box-shadow: var(--shadow-neon-soft);
+}
+
+.nav-link--active {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  background: rgba(57, 255, 20, 0.12);
+}
+
+.shadow-neon {
+  box-shadow: var(--shadow-neon-soft);
+}
+
+.shadow-neon-strong {
+  box-shadow: var(--shadow-neon-strong);
+}
+
+.section-heading {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.display-font {
+  font-family: var(--font-brand), var(--font-display), "Space Grotesk", sans-serif;
+}
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-link {
+    letter-spacing: 0.25em;
+    padding: 0.6rem 0.85rem;
+  }
+
+  .pill {
+    letter-spacing: 0.2em;
+    padding: 0.4rem 1rem;
+  }
+}
+
+.pill {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
