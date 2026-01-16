@@ -40,7 +40,7 @@ export const HeroSection = memo(function HeroSection() {
             Transforming Knowledge into <span className="whitespace-nowrap">Real-World Innovation.</span>
           </motion.h1>
           <motion.p 
-            className="mt-6 text-lg text-white/70 lg:text-xl mx-auto lg:mx-0"
+            className="mt-6 text-lg text-white/70 lg:text-xl mx-auto lg:mx-0 max-w-3xl leading-relaxed"
             variants={fadeInUp}
           >
             Electronics, AI, IOT and EdTech converge here. We design lab-to-market

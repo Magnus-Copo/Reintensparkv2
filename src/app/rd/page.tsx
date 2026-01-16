@@ -43,7 +43,7 @@ export default function RDPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Autonomous Delivery Drones
               </h2>
-              <p className="text-white/70 text-lg mb-6">
+              <p className="text-white/70 text-lg mb-6 leading-relaxed">
                 Our Autonomous Delivery Drone System is designed for fast, secure and contactless transportation of critical goods. The platform supports autonomous navigation, real-time monitoring and intelligent decision-making, making it ideal for medical, commercial and logistics applications.
               </p>
               
@@ -118,29 +118,55 @@ export default function RDPage() {
 
         {/* Automated Smart Dustbin System */}
         <div className="rounded-[32px] border border-primary/30 bg-gradient-to-br from-black/60 to-primary/5 p-8 md:p-12">
-          <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <div className="grid gap-8 lg:grid-cols-2 items-start">
             <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-              <div className="relative aspect-square rounded-[20px] overflow-hidden border border-white/10 bg-black/40">
+              <div className="group relative aspect-square rounded-[24px] overflow-hidden border-2 border-white/20 bg-black/40 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-primary/50 hover:shadow-[0_12px_40px_rgba(57,255,20,0.25)] hover:scale-105 hover:-translate-y-2">
                 <Image
                   src="/smart-dustbin-1.jpg"
-                  alt="Automated Smart Dustbin - Front View"
+                  alt="Automated Smart Dustbin - View 1"
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, 25vw"
                   loading="lazy"
-                  quality={85}
+                  quality={90}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
-              <div className="relative aspect-square rounded-[20px] overflow-hidden border border-white/10 bg-black/40">
+              <div className="group relative aspect-square rounded-[24px] overflow-hidden border-2 border-white/20 bg-black/40 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-primary/50 hover:shadow-[0_12px_40px_rgba(57,255,20,0.25)] hover:scale-105 hover:-translate-y-2">
                 <Image
                   src="/smart-dustbin-2.jpg"
-                  alt="Automated Smart Dustbin - Product View"
+                  alt="Automated Smart Dustbin - View 2"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 50vw, 25vw"
                   loading="lazy"
-                  quality={85}
+                  quality={90}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="group relative aspect-square rounded-[24px] overflow-hidden border-2 border-white/20 bg-black/40 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-primary/50 hover:shadow-[0_12px_40px_rgba(57,255,20,0.25)] hover:scale-105 hover:-translate-y-2">
+                <Image
+                  src="/smart-dustbin-3.jpg"
+                  alt="Automated Smart Dustbin - View 3"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  loading="lazy"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="group relative aspect-square rounded-[24px] overflow-hidden border-2 border-white/20 bg-black/40 shadow-[0_8px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:border-primary/50 hover:shadow-[0_12px_40px_rgba(57,255,20,0.25)] hover:scale-105 hover:-translate-y-2">
+                <Image
+                  src="/smart-dustbin-4.jpg"
+                  alt="Automated Smart Dustbin - View 4"
+                  fill
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  loading="lazy"
+                  quality={90}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
 
@@ -151,7 +177,7 @@ export default function RDPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Automated Smart Dustbin System
               </h2>
-              <p className="text-white/70 text-lg mb-6">
+              <p className="text-white/70 text-lg mb-6 leading-relaxed">
                 Our Automated Smart Dustbin is an intelligent waste management solution designed to improve hygiene, efficiency and cleanliness in public and private spaces. The system operates without physical contact and can be integrated into smart city infrastructure.
               </p>
               
@@ -227,7 +253,7 @@ export default function RDPage() {
       <section>
         <div className="mb-12 text-center">
           <p className="section-heading mb-3">Research Focus Areas</p>
-          <p className="text-lg text-white/70 max-w-3xl mx-auto">
+          <p className="text-lg text-white/70 max-w-3xl mx-auto leading-relaxed">
             Our R&D programs span multiple technology domains, driving innovation through applied research,
             prototyping and real-world deployment of advanced technology solutions.
           </p>
@@ -270,7 +296,7 @@ export default function RDPage() {
               {rdCapabilities.researchFocus.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="text-primary">▹</span>
-                  <span>{item}</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -288,7 +314,7 @@ export default function RDPage() {
               {rdCapabilities.infrastructure.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="text-primary">▹</span>
-                  <span>{item}</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -306,7 +332,7 @@ export default function RDPage() {
               {rdCapabilities.collaborationModels.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="text-primary">▹</span>
-                  <span>{item}</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -324,7 +350,7 @@ export default function RDPage() {
               {rdCapabilities.domains.map((item) => (
                 <li key={item} className="flex gap-2">
                   <span className="text-primary">▹</span>
-                  <span>{item}</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -343,7 +369,7 @@ export default function RDPage() {
             </div>
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">Knowledge Transfer</h3>
-          <p className="text-white/70 text-sm">
+          <p className="text-white/70 text-sm leading-relaxed">
             Bridge the gap between academic research and industry applications through collaborative projects and technology transfer programs.
           </p>
         </article>
@@ -357,7 +383,7 @@ export default function RDPage() {
             </div>
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">Innovation & IP</h3>
-          <p className="text-white/70 text-sm">
+          <p className="text-white/70 text-sm leading-relaxed">
             Develop innovative solutions, secure patents and create intellectual property through cutting-edge research and development activities.
           </p>
         </article>
@@ -371,7 +397,7 @@ export default function RDPage() {
             </div>
           </div>
           <h3 className="text-xl font-semibold text-white mb-2">Rapid Prototyping</h3>
-          <p className="text-white/70 text-sm">
+          <p className="text-white/70 text-sm leading-relaxed">
             Fast-track your ideas from concept to prototype with state-of-the-art facilities and expert guidance for proof-of-concept development.
           </p>
         </article>
@@ -380,7 +406,7 @@ export default function RDPage() {
       {/* Call to Action */}
       <section className="rounded-[32px] border border-primary/30 bg-black/50 p-8 md:p-12 text-center">
         <p className="section-heading mb-4">Partner With Us</p>
-        <p className="text-lg text-white/80 mb-6 max-w-3xl mx-auto">
+        <p className="text-lg text-white/80 mb-6 max-w-3xl mx-auto leading-relaxed">
           Join forces with our research team to bring your innovative ideas to life. Whether you're an academic institution, startup or enterprise, we offer flexible collaboration models including sponsored research, joint IP development, research internships and pilot deployments.
         </p>
         <div className="flex flex-wrap justify-center gap-4">

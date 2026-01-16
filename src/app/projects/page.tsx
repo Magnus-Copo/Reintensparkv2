@@ -18,7 +18,7 @@ export default function ProjectsPage() {
         description="Our projects are designed to bridge the gap between theory and real-world application. We offer hands-on experience through carefully structured hardware and IOT projects that reflect real industry use cases and engineering challenges."
         highlight="Hardware • Software • AI"
       >
-        <p className="text-sm text-white/70">
+        <p className="text-sm text-white/70 leading-relaxed max-w-3xl">
           Each engagement ships with documentation, mentorship and deployment-ready assets tailored to your evaluation rubric.
         </p>
       </PageHero>

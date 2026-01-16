@@ -99,7 +99,7 @@ export const RDApproach = memo(function RDApproach() {
             </h3>
             
             <p 
-              className="text-white/60 text-xs relative group-hover:text-white/80 transition-colors duration-300"
+              className="text-white/60 text-xs relative group-hover:text-white/80 transition-colors duration-300 text-center"
             >
               {approach.desc}
             </p>

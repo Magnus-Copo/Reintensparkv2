@@ -120,7 +120,7 @@ export function AboutSection() {
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.3em] text-white">
               {pillar.label}
             </p>
-            <p className="mt-2 text-sm text-white/70">{pillar.description}</p>
+            <p className="mt-2 text-sm text-white/70 text-center leading-relaxed">{pillar.description}</p>
           </motion.div>
         ))}
       </motion.div>
