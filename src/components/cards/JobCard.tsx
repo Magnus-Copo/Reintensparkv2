@@ -3,10 +3,10 @@ import Link from "next/link";
 import type { Job } from "@/data/jobs";
 
 interface JobCardProps {
-  job: Job;
+  readonly job: Job;
 }
 
-export function JobCard({ job }: JobCardProps) {
+export function JobCard({ job }: Readonly<JobCardProps>) {
   return (
     <article className="rounded-[30px] border border-white/10 bg-card/70 p-6 text-white">
       <div className="flex flex-wrap items-center justify-between gap-3 text-sm uppercase tracking-[0.3em] text-white/60">
@@ -14,12 +14,12 @@ export function JobCard({ job }: JobCardProps) {
         <span className="text-primary">{job.type}</span>
       </div>
       <h3 className="mt-4 text-2xl font-semibold">{job.role}</h3>
-      <p className="mt-2 text-white/70">{job.description}</p>
+      <p className="mt-2 text-white/70 leading-relaxed">{job.description}</p>
       <ul className="mt-4 space-y-2 text-sm text-white/70">
         {job.responsibilities.map((item) => (
           <li key={item} className="flex gap-3">
             <span className="text-primary">▹</span>
-            <span>{item}</span>
+            <span className="leading-relaxed">{item}</span>
           </li>
         ))}
       </ul>

@@ -26,7 +26,7 @@ export function PageHero({
         <h1 className="display-font text-4xl font-semibold leading-tight sm:text-5xl">
           {title}
         </h1>
-        <p className="max-w-3xl text-lg text-white/70">{description}</p>
+        <p className="max-w-3xl text-lg text-white/70 leading-relaxed">{description}</p>
         {highlight ? (
           <p className="text-sm uppercase tracking-[0.4em] text-primary/80">
             {highlight}

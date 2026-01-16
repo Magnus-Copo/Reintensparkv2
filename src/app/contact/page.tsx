@@ -48,7 +48,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h3 className="text-lg font-semibold text-white">Visit</h3>
-            <p className="mt-2 text-sm text-white/70">{contactChannels.address}</p>
+            <p className="mt-2 text-sm text-white/70 leading-relaxed">{contactChannels.address}</p>
           </div>
           <div className="overflow-hidden rounded-3xl border border-white/10">
             <iframe

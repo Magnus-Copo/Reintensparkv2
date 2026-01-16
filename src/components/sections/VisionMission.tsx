@@ -90,7 +90,7 @@ export function VisionMissionSection() {
               {card.title}
             </motion.h3>
             <motion.p 
-              className="mt-4 text-white/70"
+              className="mt-4 text-white/70 leading-relaxed"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

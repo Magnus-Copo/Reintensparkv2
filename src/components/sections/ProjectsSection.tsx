@@ -23,7 +23,7 @@ function OfferingsList({
           </p>
           <ul className="mt-3 flex-1 space-y-2 text-sm text-white/75">
             {offering.bullets.map((bullet) => (
-              <li key={bullet} className="leading-relaxed">
+              <li key={bullet} className="leading-relaxed text-center sm:text-left">
                 {bullet}
               </li>
             ))}

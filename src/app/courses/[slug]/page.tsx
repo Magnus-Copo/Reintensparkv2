@@ -59,7 +59,7 @@ export default async function CourseDetailPage({ params }: Readonly<CourseDetail
       <section className="grid gap-8 lg:grid-cols-[2fr_1fr]">
         <article className="rounded-[30px] border border-white/10 bg-card/70 p-8 text-white/80">
           <h2 className="text-2xl font-semibold text-white">Description</h2>
-          <p className="mt-4 text-lg text-white/70">{course.description}</p>
+          <p className="mt-4 text-lg text-white/70 leading-relaxed">{course.description}</p>
         </article>
         <aside className="rounded-[30px] border border-white/10 bg-black/60 p-8 text-sm text-white/70">
           <h3 className="text-white">Program Snapshot</h3>
@@ -105,7 +105,7 @@ export default async function CourseDetailPage({ params }: Readonly<CourseDetail
               {course.audience.map((item) => (
                 <li key={item} className="flex gap-3">
                   <span className="text-primary">▹</span>
-                  <span>{item}</span>
+                  <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -119,7 +119,7 @@ export default async function CourseDetailPage({ params }: Readonly<CourseDetail
           {course.outcomes.map((outcome) => (
             <li key={outcome} className="flex gap-3">
               <span className="text-primary">✔</span>
-              <span>{outcome}</span>
+              <span className="leading-relaxed">{outcome}</span>
             </li>
           ))}
         </ul>

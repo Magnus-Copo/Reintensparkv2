@@ -17,7 +17,7 @@ export function WhyChooseSection() {
               className="group rounded-[28px] border border-white/10 bg-card/70 p-6 text-center transition hover:border-primary hover:shadow-[0_0_40px_rgba(57,255,20,0.35)] md:text-left"
             >
               <h3 className="text-xl font-semibold text-white">{card.title}</h3>
-              <p className="mt-4 text-white/70">{card.description}</p>
+              <p className="mt-4 text-white/70 leading-relaxed">{card.description}</p>
               <div className="mt-8 h-1 w-20 bg-gradient-to-r from-primary to-transparent transition group-hover:w-32 md:mx-0 mx-auto" />
             </article>
           ))}

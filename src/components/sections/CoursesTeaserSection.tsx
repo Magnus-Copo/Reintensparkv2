@@ -29,7 +29,7 @@ export function CoursesTeaserSection() {
             <h3 className="mt-4 text-2xl font-semibold text-white">
               {course.title}
             </h3>
-            <p className="mt-3 text-sm text-white/70">{course.focus}</p>
+            <p className="mt-3 text-sm text-white/70 text-center lg:text-left leading-relaxed">{course.focus}</p>
             <Link
               href="/courses"
               className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary mx-auto lg:mx-0"
