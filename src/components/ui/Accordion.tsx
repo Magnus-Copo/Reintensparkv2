@@ -28,13 +28,13 @@ export function Accordion({ items }: AccordionProps) {
               className="flex w-full items-center justify-between text-left text-white"
               onClick={() => setOpenIndex(isOpen ? -1 : index)}
             >
-              <span className="text-lg font-semibold">{item.title}</span>
+              <span className="text-2xl font-semibold">{item.title}</span>
               <span className="text-primary">
                 {isOpen ? "–" : "+"}
               </span>
             </button>
             {isOpen ? (
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
+              <ul className="mt-4 space-y-2 text-base text-white/70">
                 {item.content.map((content) => (
                   <li key={content} className="flex gap-3">
                     <span className="text-primary">▹</span>

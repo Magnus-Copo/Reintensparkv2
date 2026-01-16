@@ -156,7 +156,7 @@ export function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="bg-gradient-to-r from-white via-white to-primary bg-clip-text text-3xl font-bold text-transparent sm:text-4xl lg:text-5xl"
+                    className="bg-gradient-to-r from-white via-white to-primary bg-clip-text text-4xl font-bold text-transparent"
                   >
                     {project.title}
                   </motion.h2>
@@ -166,7 +166,7 @@ export function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.5 }}
-                    className="mt-5 text-base leading-relaxed text-white/75 sm:text-lg"
+                    className="mt-5 text-base leading-relaxed text-white/75 text-justify"
                   >
                     {project.description}
                   </motion.p>
@@ -181,7 +181,7 @@ export function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) 
                     >
                       <div className="mb-4 flex items-center gap-3">
                         <div className="h-1 w-12 rounded-full bg-gradient-to-r from-primary to-primary/20" />
-                        <h3 className="text-xl font-bold uppercase tracking-widest text-primary">
+                        <h3 className="text-2xl font-bold uppercase tracking-widest text-primary">
                           Key Features
                         </h3>
                       </div>
@@ -214,7 +214,7 @@ export function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) 
                     >
                       <div className="mb-4 flex items-center gap-3">
                         <div className="h-1 w-12 rounded-full bg-gradient-to-r from-primary to-primary/20" />
-                        <h3 className="text-xl font-bold uppercase tracking-widest text-primary">
+                        <h3 className="text-2xl font-bold uppercase tracking-widest text-primary">
                           Technical Specifications
                         </h3>
                       </div>

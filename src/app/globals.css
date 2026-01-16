@@ -118,8 +118,20 @@ a {
   width: min(98vw, 1600px);
   margin-inline: auto;
   padding-inline: clamp(0.75rem, 3vw, 2rem);
-  padding-top: clamp(5rem, 6vw, 6rem);
+  padding-top: 10rem;
   padding-bottom: clamp(4rem, 6vw, 7rem);
+}
+
+@media (min-width: 640px) {
+  .site-main {
+    padding-top: 9.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-main {
+    padding-top: 8.5rem;
+  }
 }
 
 .glass-panel {
@@ -227,4 +239,14 @@ a {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+}
+
+/* Hide scrollbar while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

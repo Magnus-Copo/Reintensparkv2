@@ -56,7 +56,7 @@ export function SiteFooter() {
           {/* Navigation Links - Middle section */}
           <div className="grid grid-cols-1 gap-8 text-base text-white sm:grid-cols-2 sm:gap-24 lg:gap-32">
           <div>
-            <h4 className="text-sm uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+            <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
               Navigation
             </h4>
             <ul className="space-y-3">
@@ -73,7 +73,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+            <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
               Quick Links
             </h4>
             <ul className="space-y-3">
@@ -92,8 +92,8 @@ export function SiteFooter() {
         </div>
 
         {/* Contact Section - Right aligned */}
-        <div className="text-sm text-white lg:max-w-xs lg:ml-auto">
-          <h4 className="text-sm uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+        <div className="text-base text-white lg:max-w-xs lg:ml-auto">
+          <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
             Contact
           </h4>
           <div className="space-y-3">
@@ -133,7 +133,7 @@ export function SiteFooter() {
       </div>
       </div>
       <div className="border-t border-white/10 py-6">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-4 text-xs uppercase tracking-[0.4em] text-white">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-4 text-base uppercase tracking-[0.4em] text-white">
           <div className="text-center sm:text-left">
             © {new Date().getFullYear()} Reinternspark Technology
           </div>

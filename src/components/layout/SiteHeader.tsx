@@ -70,30 +70,26 @@ export function SiteHeader() {
           "flex w-full flex-col items-center shadow-xl lg:flex-row lg:items-center lg:justify-between transform-gpu",
           "transition-[margin,padding,border-radius,gap,background-color,border-color] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
           isScrolled 
-            ? "mt-4 px-8 py-4 rounded-[999px] gap-3 lg:gap-4 bg-white/15 backdrop-blur-2xl border-2 border-white/25" 
-            : "mt-0 px-8 py-6 rounded-none gap-4 lg:gap-6 glass-panel backdrop-blur-xl ring-1 ring-white/10"
+            ? "mt-4 px-4 py-1 rounded-[999px] gap-1 lg:gap-1.5 bg-white/15 backdrop-blur-2xl border-2 border-white/25" 
+            : "mt-0 px-4 py-1 rounded-none gap-1 lg:gap-1.5 glass-panel backdrop-blur-xl ring-1 ring-white/10"
         )}>
-          <Link href="/" className="text-primary">
-            <div className={cn(
-              "relative transition-[width] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-gpu",
-              isScrolled ? "w-[120px] h-[41px]" : "w-[160px] h-[55px]"
-            )}>
-              <Image
-                src="/reintenspark-logo.png"
-                fill
-                alt="Reinternspark logo"
-                priority
-                style={{ objectFit: 'contain' }}
-                className="transition-opacity duration-200"
-              />
-            </div>
+          <Link href="/" className="text-primary flex-shrink-0 z-10">
+            <Image
+              src="/reinternspark-logo.svg"
+              width={isScrolled ? 100 : 110}
+              height={isScrolled ? 28 : 30}
+              alt="Reinternspark logo"
+              priority
+              style={{ objectFit: 'contain' }}
+              className="transition-all duration-200 drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]"
+            />
           </Link>
 
           <nav
             className={cn(
-              "hidden min-w-0 flex-1 flex-wrap items-center justify-center lg:flex transform-gpu",
+              "hidden items-center lg:flex transform-gpu whitespace-nowrap z-10 absolute left-1/2 -translate-x-1/2",
               "transition-[gap] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
-              isScrolled ? "gap-1" : "gap-2"
+              isScrolled ? "gap-2" : "gap-3"
             )}
             aria-label="Primary"
           >
@@ -103,9 +99,9 @@ export function SiteHeader() {
                 href={link.href}
                 prefetch
                 className={cn(
-                  "nav-link transition-[font-size,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-gpu",
+                  "nav-link transition-[font-size,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-gpu flex-shrink-0",
                   isActive(link.href) && "nav-link--active",
-                  isScrolled ? "text-sm px-3 py-1.5" : "text-base px-4 py-2"
+                  isScrolled ? "text-xs px-2.5 py-1.5" : "text-base px-4 py-2"
                 )}
               >
                 {link.label}
@@ -113,12 +109,12 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <div className="hidden flex-shrink-0 items-center gap-3 lg:flex">
+          <div className="hidden flex-shrink-0 items-center gap-3 lg:flex lg:ml-auto lg:mr-4">
             <NeonButton 
               href="/contact"
               className={cn(
                 "transition-[font-size,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-gpu",
-                isScrolled ? "text-sm px-4 py-1.5" : "text-base px-5 py-2"
+                isScrolled ? "text-xs px-3 py-1.5" : "text-base px-5 py-2"
               )}
             >
               Contact

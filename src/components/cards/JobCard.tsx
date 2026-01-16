@@ -9,13 +9,13 @@ interface JobCardProps {
 export function JobCard({ job }: Readonly<JobCardProps>) {
   return (
     <article className="rounded-[30px] border border-white/10 bg-card/70 p-6 text-white">
-      <div className="flex flex-wrap items-center justify-between gap-3 text-sm uppercase tracking-[0.3em] text-white/60">
+      <div className="flex flex-wrap items-center justify-between gap-3 text-base uppercase tracking-[0.3em] text-white/60">
         <span>{job.location}</span>
         <span className="text-primary">{job.type}</span>
       </div>
       <h3 className="mt-4 text-2xl font-semibold">{job.role}</h3>
-      <p className="mt-2 text-white/70 leading-relaxed">{job.description}</p>
-      <ul className="mt-4 space-y-2 text-sm text-white/70">
+      <p className="mt-2 text-base text-white/70 leading-relaxed text-justify">{job.description}</p>
+      <ul className="mt-4 space-y-2 text-base text-white/70">
         {job.responsibilities.map((item) => (
           <li key={item} className="flex gap-3">
             <span className="text-primary">▹</span>

@@ -89,10 +89,10 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       </span>
                     ))}
                   </div>
-                  <h2 className="text-3xl font-bold text-white lg:text-4xl">
+                  <h2 className="text-2xl font-bold text-white">
                     {course.title}
                   </h2>
-                  <p className="mt-4 text-lg text-white/70">{course.summary}</p>
+                  <p className="mt-4 text-base text-white/70 text-justify">{course.summary}</p>
 
                   {/* Course Info Grid */}
                   <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -103,7 +103,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       <div className="text-2xl font-bold text-primary">
                         ₹{course.price}
                       </div>
-                      <div className="text-sm text-white/60">Course Fee</div>
+                      <div className="text-base text-white/60">Course Fee</div>
                     </motion.div>
                     <motion.div
                       className="rounded-2xl border border-white/10 bg-black/40 p-4"
@@ -112,7 +112,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       <div className="text-2xl font-bold text-white">
                         {course.lectures}
                       </div>
-                      <div className="text-sm text-white/60">Lectures</div>
+                      <div className="text-base text-white/60">Lectures</div>
                     </motion.div>
                     <motion.div
                       className="rounded-2xl border border-white/10 bg-black/40 p-4"
@@ -121,7 +121,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       <div className="text-2xl font-bold text-white">
                         {course.weeks}
                       </div>
-                      <div className="text-sm text-white/60">Weeks</div>
+                      <div className="text-base text-white/60">Weeks</div>
                     </motion.div>
                     <motion.div
                       className="rounded-2xl border border-white/10 bg-black/40 p-4"
@@ -130,7 +130,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       <div className="text-2xl font-bold text-white">
                         {course.duration}
                       </div>
-                      <div className="text-sm text-white/60">Duration</div>
+                      <div className="text-base text-white/60">Duration</div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -181,20 +181,20 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                     >
                       {/* Overview */}
                       <div>
-                        <h3 className="mb-4 text-xl font-semibold text-white">
+                        <h3 className="mb-4 text-2xl font-semibold text-white">
                           Course Overview
                         </h3>
-                        <p className="leading-relaxed text-white/70">
+                        <p className="leading-relaxed text-base text-white/70 text-justify">
                           {course.overview}
                         </p>
-                        <p className="mt-4 leading-relaxed text-white/70">
+                        <p className="mt-4 leading-relaxed text-base text-white/70 text-justify">
                           {course.description}
                         </p>
                       </div>
 
                       {/* Tools & Technologies */}
                       <div>
-                        <h3 className="mb-4 text-xl font-semibold text-white">
+                        <h3 className="mb-4 text-2xl font-semibold text-white">
                           Tools & Technologies
                         </h3>
                         <div className="flex flex-wrap gap-3">
@@ -223,7 +223,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <h3 className="mb-6 text-xl font-semibold text-white">
+                      <h3 className="mb-6 text-2xl font-semibold text-white">
                         Course Curriculum
                       </h3>
                       <div className="space-y-4">
@@ -241,7 +241,7 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
                                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/20 text-sm font-bold text-primary">
                                   {index + 1}
                                 </div>
-                                <h4 className="text-lg font-semibold text-white">
+                                <h4 className="text-2xl font-semibold text-white">
                                   {module.title}
                                 </h4>
                               </div>

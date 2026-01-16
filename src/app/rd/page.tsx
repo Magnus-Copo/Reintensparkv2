@@ -161,7 +161,8 @@ export default function RDPage() {
                   src="/smart-dustbin-4.jpg"
                   alt="Automated Smart Dustbin - View 4"
                   fill
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  style={{ objectPosition: '30% center' }}
                   sizes="(max-width: 768px) 50vw, 25vw"
                   loading="lazy"
                   quality={90}

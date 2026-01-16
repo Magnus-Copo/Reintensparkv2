@@ -23,10 +23,10 @@ export function PageHero({
       </div>
       <div className="relative space-y-6 text-white">
         <p className="pill w-fit bg-white/5 text-primary">{kicker}</p>
-        <h1 className="display-font text-4xl font-semibold leading-tight sm:text-5xl">
+        <h1 className="display-font text-4xl font-semibold leading-tight">
           {title}
         </h1>
-        <p className="max-w-3xl text-lg text-white/70 leading-relaxed">{description}</p>
+        <p className="max-w-3xl text-base text-white/70 leading-relaxed text-justify">{description}</p>
         {highlight ? (
           <p className="text-sm uppercase tracking-[0.4em] text-primary/80">
             {highlight}
