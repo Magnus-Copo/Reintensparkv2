@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { type Course } from "@/data/courses";
 
@@ -13,6 +13,28 @@ type TabType = "overview" | "topics" | "outcomes" | "audience";
 
 export function CourseModal({ course, onClose }: CourseModalProps) {
   const [activeTab, setActiveTab] = useState<TabType>("overview");
+
+  useEffect(() => {
+    const header = document.querySelector('header');
+    if (course) {
+      if (header) {
+        header.style.opacity = "0";
+        header.style.pointerEvents = "none";
+        header.style.transition = "opacity 0.3s ease";
+      }
+    } else {
+      if (header) {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+      }
+    }
+    return () => {
+      if (header) {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+      }
+    };
+  }, [course]);
 
   if (!course) return null;
 

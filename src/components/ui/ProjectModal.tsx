@@ -21,13 +21,27 @@ interface ProjectModalProps {
 
 export function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) {
   useEffect(() => {
+    const header = document.querySelector('header');
     if (project) {
       document.body.style.overflow = "hidden";
+      if (header) {
+        header.style.opacity = "0";
+        header.style.pointerEvents = "none";
+        header.style.transition = "opacity 0.3s ease";
+      }
     } else {
       document.body.style.overflow = "unset";
+      if (header) {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+      }
     }
     return () => {
       document.body.style.overflow = "unset";
+      if (header) {
+        header.style.opacity = "1";
+        header.style.pointerEvents = "auto";
+      }
     };
   }, [project]);
 

@@ -59,29 +59,32 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 transform-gpu">
+    <header className="fixed inset-x-0 top-0 z-[60] transform-gpu">
       <div className={cn(
-        "mx-auto transition-[max-width,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
+        "mx-auto transition-[max-width,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative z-[60]",
         isScrolled 
           ? "max-w-7xl px-4 sm:px-6 lg:px-8" 
           : "max-w-[100vw] px-0"
       )}>
         <div className={cn(
-          "flex w-full flex-col items-center shadow-xl lg:flex-row lg:items-center lg:justify-between transform-gpu",
+          "flex w-full flex-col items-center shadow-xl lg:flex-row lg:items-center lg:justify-between transform-gpu relative",
           "transition-[margin,padding,border-radius,gap,background-color,border-color] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
           isScrolled 
             ? "mt-4 px-4 py-1 rounded-[999px] gap-1 lg:gap-1.5 bg-white/15 backdrop-blur-2xl border-2 border-white/25" 
             : "mt-0 px-4 py-1 rounded-none gap-1 lg:gap-1.5 glass-panel backdrop-blur-xl ring-1 ring-white/10"
         )}>
-          <Link href="/" className="text-primary flex-shrink-0 z-10">
+          <Link href="/" className="text-primary flex-shrink-0 z-10 relative">
             <Image
               src="/reinternspark-logo.svg"
-              width={isScrolled ? 100 : 110}
-              height={isScrolled ? 28 : 30}
+              width={isScrolled ? 100 : 160}
+              height={isScrolled ? 28 : 44}
               alt="Reinternspark logo"
               priority
-              style={{ objectFit: 'contain' }}
-              className="transition-all duration-200 drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]"
+              style={{ objectFit: 'contain', height: 'auto' }}
+              className={cn(
+                "transition-all duration-200 drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]",
+                !isScrolled && "scale-110 origin-left"
+              )}
             />
           </Link>
 
@@ -157,16 +160,26 @@ export function SiteHeader() {
         </div>
       </div>
 
+      {/* Mobile Menu Backdrop */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[45] lg:hidden"
+          onClick={() => setIsMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      {/* Mobile Menu */}
       <div
         id={MOBILE_MENU_ID}
         className={cn(
-          "lg:hidden",
+          "lg:hidden relative z-50",
           "origin-top overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
           isMenuOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className={cn(
-          "mx-auto rounded-3xl border border-white/5 bg-gradient-to-b from-white/5 to-white/0 p-6 text-sm uppercase tracking-[0.3em] text-white/80",
+          "mx-auto rounded-3xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-black/80 backdrop-blur-xl p-6 shadow-2xl",
           "transition-[margin,width] duration-300 ease-out",
           isScrolled ? "mt-2 w-[92%]" : "mt-3 w-[95%]"
         )}>
@@ -177,10 +190,10 @@ export function SiteHeader() {
                 href={link.href}
                 prefetch
                 className={cn(
-                  "rounded-2xl px-4 py-3 text-center transition",
+                  "rounded-2xl px-4 py-3 text-center transition text-sm uppercase tracking-[0.3em] font-medium",
                   isActive(link.href)
-                    ? "bg-white/10 text-primary"
-                    : "hover:bg-white/5"
+                    ? "bg-primary/20 text-primary border border-primary/30"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
                 )}
                 onClick={() => setIsMenuOpen(false)}
               >

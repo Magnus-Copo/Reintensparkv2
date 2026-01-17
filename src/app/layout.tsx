@@ -11,21 +11,39 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
-  display: "swap",
+  display: "optional",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-space-grotesk",
-  display: "swap",
+  display: "optional",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 });
 
 const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["600"],
   variable: "--font-unbounded",
+  display: "optional",
+  preload: true,
+  fallback: ["system-ui", "sans-serif"],
 });
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#010409' },
+    { media: '(prefers-color-scheme: light)', color: '#010409' },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://reintenspark.com"),
@@ -59,6 +77,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://lottie.host" />
+      </head>
       <body className={`${poppins.variable} ${spaceGrotesk.variable} ${unbounded.variable} antialiased`}>
         <LoadingBar />
         <div className="site-shell">
