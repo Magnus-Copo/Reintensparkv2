@@ -16,25 +16,38 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
 
   useEffect(() => {
     const header = document.querySelector('header');
+    if (!header) return;
+    
     if (course) {
-      if (header) {
-        header.style.opacity = "0";
-        header.style.pointerEvents = "none";
-        header.style.transition = "opacity 0.3s ease";
-      }
+      header.style.opacity = "0";
+      header.style.pointerEvents = "none";
+      header.style.transition = "opacity 0.3s ease";
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
     } else {
-      if (header) {
-        header.style.opacity = "1";
-        header.style.pointerEvents = "auto";
-      }
+      header.style.opacity = "1";
+      header.style.pointerEvents = "auto";
+      document.body.style.overflow = '';
     }
+    
     return () => {
-      if (header) {
-        header.style.opacity = "1";
-        header.style.pointerEvents = "auto";
-      }
+      header.style.opacity = "1";
+      header.style.pointerEvents = "auto";
+      document.body.style.overflow = '';
     };
   }, [course]);
+
+  // Close on Escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && course) {
+        onClose();
+      }
+    };
+    
+    globalThis.addEventListener('keydown', handleEscape);
+    return () => globalThis.removeEventListener('keydown', handleEscape);
+  }, [course, onClose]);
 
   if (!course) return null;
 
@@ -55,10 +68,11 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
+          aria-hidden="true"
         />
 
         {/* Modal Container */}
-        <div className="flex min-h-full items-center justify-center p-4">
+        <div className="flex min-h-full items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="course-modal-title">
           <motion.div
             className="relative w-full max-w-6xl"
             initial={{ scale: 0.9, opacity: 0, y: 50 }}

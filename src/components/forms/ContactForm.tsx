@@ -51,8 +51,16 @@ export function ContactForm() {
       message: getFormValue(data, "message"),
     };
 
+    // Validation
     if (!payload.name || !payload.email || !payload.message) {
       setStatus({ type: "error", message: "Please complete all required fields." });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(payload.email)) {
+      setStatus({ type: "error", message: "Please enter a valid email address." });
       return;
     }
 
@@ -73,11 +81,16 @@ export function ContactForm() {
 
       setStatus({
         type: "success",
-        message: "Thank you. Our team will reach out within 24 hours.",
+        message: "Thank you! Our team will reach out within 24 hours.",
       });
       form.reset();
+      
+      // Auto-clear success message after 5 seconds
+      setTimeout(() => {
+        setStatus({ type: "idle" });
+      }, 5000);
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Unexpected error";
+      const message = error instanceof Error ? error.message : "Unexpected error occurred. Please try again.";
       setStatus({ type: "error", message });
     }
   }

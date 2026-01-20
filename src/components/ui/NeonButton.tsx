@@ -37,16 +37,23 @@ export function NeonButton({
 
   const MotionLink = motion.create(Link);
 
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <MotionLink
       href={href}
       prefetch={prefetch}
       className={cn(baseStyles, neonRing, variants[variant], className)}
-      onClick={onClick}
+      onClick={handleClick}
       variants={buttonHover}
       initial="rest"
       whileHover="hover"
       whileTap="tap"
+      aria-label={typeof children === 'string' ? children : undefined}
     >
       {children}
     </MotionLink>

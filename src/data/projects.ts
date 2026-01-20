@@ -54,7 +54,7 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/diy-drone.jpg",
+        src: "/images/projects/drones/diy-drone.jpg",
         alt: "DIY Drone build kit with components",
         label: "DIY Drone",
         details: {
@@ -75,7 +75,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/FPV-drone.jpg",
+        src: "/images/projects/drones/fpv-drone.jpg",
         alt: "FPV Racing Drone in flight",
         label: "FPV Drone",
         details: {
@@ -96,7 +96,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/landmine-dedector.jpg",
+        src: "/images/projects/drones/landmine-detector.jpg",
         alt: "Landmine Detector Drone with specialized sensors",
         label: "Landmine Detector",
         details: {
@@ -118,7 +118,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/mini-drones.jpg",
+        src: "/images/projects/drones/mini-drones.jpg",
         alt: "Compact Mini Drone",
         label: "Mini Drone",
         details: {
@@ -171,7 +171,7 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/IMG-20240704-WA0008-1-scaled.jpg",
+        src: "/images/projects/iot/biometric-auth.jpg",
         alt: "Biometric Authentication System with fingerprint scanner",
         label: "Biometric Authentication System",
         details: {
@@ -193,7 +193,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2024-12-16-at-14.18.13_f5370c1d-scaled.jpg",
+        src: "/images/projects/iot/smart-glucometer.jpg",
         alt: "IOT-enabled Glucometer for blood glucose monitoring",
         label: "Smart Glucometer",
         details: {
@@ -215,7 +215,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/IMG-20240704-WA0009-scaled.jpg",
+        src: "/images/projects/iot/weather-monitoring.jpg",
         alt: "IOT Weather Monitoring System with multiple sensors",
         label: "IOT Based Weather Monitoring System",
         details: {
@@ -237,7 +237,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-18-at-14.45.43_5a19cb5d.jpg",
+        src: "/images/projects/iot/plant-monitoring.jpg",
         alt: "IOT Plant Monitoring System for smart agriculture",
         label: "IOT Based Plant Monitoring System",
         details: {
@@ -290,7 +290,7 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2024-12-30-at-14.40.44_c562d470-scaled.jpg",
+        src: "/images/projects/hardware/thermoelectric-generator.jpg",
         alt: "Arduino based thermoelectric energy generator using waste heat",
         label: "Arduino Based Thermo Electric Energy Generator Using Waste",
         details: {
@@ -313,7 +313,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-15-at-14.47.36_e41d5a2f-scaled.jpg",
+        src: "/images/projects/hardware/fire-fighting-robot.jpg",
         alt: "Autonomous fire fighting robot with water cannon",
         label: "Fire Fighting Robot",
         details: {
@@ -336,7 +336,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2024-11-28-at-13.04.20_657b29ef-scaled.jpg",
+        src: "/images/projects/hardware/ev-charging.jpg",
         alt: "On-road electric vehicle charging station",
         label: "On Road EV Charging",
         details: {
@@ -359,7 +359,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/IMG-20240704-WA0010-scaled.jpg",
+        src: "/images/projects/hardware/smart-helmet.jpg",
         alt: "Smart helmet with integrated safety features",
         label: "Smart Helmet",
         details: {
@@ -413,7 +413,7 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/LCA-Normal.jpg",
+        src: "/images/projects/ai-annotations/heart-annotation.jpg",
         alt: "Heart annotation for medical imaging and cardiac analysis",
         label: "Heart Annotation",
         details: {
@@ -436,7 +436,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/Image-annotation-scaled.jpeg",
+        src: "/images/projects/ai-annotations/image-annotation.jpeg",
         alt: "Image annotation with bounding boxes and segmentation",
         label: "Image Annotation",
         details: {
@@ -459,7 +459,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/ABC632_mask-scaled.jpg",
+        src: "/images/projects/ai-annotations/object-annotation.jpg",
         alt: "Object annotation with 3D bounding boxes for autonomous systems",
         label: "Object Annotation",
         details: {
@@ -482,7 +482,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/video-annotaion-1.png",
+        src: "/images/projects/ai-annotations/video-annotation.png",
         alt: "Video annotation timeline for activity and event detection",
         label: "Video Annotation",
         details: {
@@ -536,17 +536,17 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/gears-768x512.jpg",
+        src: "/images/projects/printing/gears.jpg",
         alt: "Close-up of printed gear assembly",
         label: "Precision Gears",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/printing-768x512.jpg",
+        src: "/images/projects/printing/printing.jpg",
         alt: "Industrial 3D printer in action",
         label: "Production Run",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/3D-1024x576.jpg",
+        src: "/images/projects/printing/3d-design.jpg",
         alt: "Design team reviewing prototype shells",
         label: "Design Review",
       },
@@ -582,17 +582,17 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/pcb-768x400.jpg",
+        src: "/images/projects/pcb/pcb.jpg",
         alt: "Engineer probing a high-density PCB",
         label: "HDI Stack",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/integrantion.jpg",
+        src: "/images/projects/pcb/integration.jpg",
         alt: "System integration test bench",
         label: "System Bring-up",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/Circuit-768x489.png",
+        src: "/images/projects/pcb/circuit.png",
         alt: "PCB layout rendered inside CAD software",
         label: "Layout Review",
       },
@@ -628,7 +628,7 @@ export const projectCategories: ProjectCategory[] = [
     ],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-18-at-14.36.01_385f8f3c-scaled.jpg",
+        src: "/images/projects/robotics/robot.jpg",
         alt: "Autonomous robot with sensors and actuators",
         label: "Robot",
         details: {
@@ -651,7 +651,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/rover.webp",
+        src: "/images/projects/robotics/rover.webp",
         alt: "All-terrain rover for exploration and research",
         label: "Rover",
         details: {
@@ -674,7 +674,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/bot-arm.jpg",
+        src: "/images/projects/robotics/bot-arm.jpg",
         alt: "Robotic arm with precision gripper for pick and place",
         label: "Bot Arm",
         details: {
@@ -697,7 +697,7 @@ export const projectCategories: ProjectCategory[] = [
         }
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/conveyer-belt.jpg",
+        src: "/images/projects/robotics/conveyer-belt.jpg",
         alt: "Automated conveyer belt system for material handling",
         label: "Conveyer Belt",
         details: {
@@ -752,17 +752,17 @@ export const projectCategories: ProjectCategory[] = [
     focus: ["Web Access", "Ecommerce"],
     gallery: [
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/web-access-1.png",
+        src: "/images/projects/web/web-access.png",
         alt: "Secure web access illustration",
         label: "Web Access",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/01/ecommerce-1-1024x810.jpg",
+        src: "/images/projects/web/ecommerce.jpg",
         alt: "Ecommerce storefront analytics",
         label: "Ecommerce",
       },
       {
-        src: "https://reintenspark.com/wp-content/uploads/2025/10/pexels-photo-669612-669612-1024x678.jpg",
+        src: "/images/projects/web/agency-pods.jpg",
         alt: "Team reviewing analytics charts and laptops",
         label: "Agency Pods",
       },

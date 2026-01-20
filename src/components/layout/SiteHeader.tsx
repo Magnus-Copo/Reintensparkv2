@@ -70,14 +70,14 @@ export function SiteHeader() {
           "flex w-full flex-col items-center shadow-xl lg:flex-row lg:items-center lg:justify-between transform-gpu relative",
           "transition-[margin,padding,border-radius,gap,background-color,border-color] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)]",
           isScrolled 
-            ? "mt-4 px-4 py-1 rounded-[999px] gap-1 lg:gap-1.5 bg-white/15 backdrop-blur-2xl border-2 border-white/25" 
-            : "mt-0 px-4 py-1 rounded-none gap-1 lg:gap-1.5 glass-panel backdrop-blur-xl ring-1 ring-white/10"
+            ? "mt-3 px-3 py-0.5 rounded-[999px] gap-1 lg:gap-1.5 bg-white/15 backdrop-blur-2xl border-2 border-white/25" 
+            : "mt-0 px-3 py-0.5 rounded-none gap-1 lg:gap-1.5 glass-panel backdrop-blur-xl ring-1 ring-white/10"
         )}>
           <Link href="/" className="text-primary flex-shrink-0 z-10 relative">
             <Image
               src="/reinternspark-logo.svg"
-              width={isScrolled ? 100 : 160}
-              height={isScrolled ? 28 : 44}
+              width={isScrolled ? 85 : 140}
+              height={isScrolled ? 24 : 38}
               alt="Reinternspark logo"
               priority
               style={{ objectFit: 'contain', height: 'auto' }}
@@ -100,7 +100,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                prefetch
+                prefetch={true}
                 className={cn(
                   "nav-link transition-[font-size,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] transform-gpu flex-shrink-0",
                   isActive(link.href) && "nav-link--active",
@@ -188,7 +188,7 @@ export function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                prefetch
+                prefetch={true}
                 className={cn(
                   "rounded-2xl px-4 py-3 text-center transition text-sm uppercase tracking-[0.3em] font-medium",
                   isActive(link.href)

@@ -151,7 +151,7 @@ export const rdCapabilities = {
 // Additional AI Annotation projects for Software/IOT page only
 export const softwareAIAnnotations = [
   {
-    src: "https://reintenspark.com/wp-content/uploads/2025/01/counter-segmenattion.png",
+    src: "/images/projects/ai-annotations/counter-segmentation.png",
     alt: "Counter segmentation for object counting and density estimation",
     label: "Counter Segmentation",
     details: {
@@ -174,7 +174,7 @@ export const softwareAIAnnotations = [
     }
   },
   {
-    src: "https://reintenspark.com/wp-content/uploads/2025/01/20240125_115540_cr_rotate_180_mask.jpg",
+    src: "/images/projects/ai-annotations/shadow-annotation.jpg",
     alt: "Shadow annotation for lighting analysis and image enhancement",
     label: "Shadow Annotation",
     details: {
@@ -197,7 +197,7 @@ export const softwareAIAnnotations = [
     }
   },
   {
-    src: "https://reintenspark.com/wp-content/uploads/2025/01/bounding-box.jpg",
+    src: "/images/projects/ai-annotations/bounding-box.jpg",
     alt: "Bounding box annotation for object detection and localization",
     label: "Bounding Box Annotation",
     details: {
@@ -220,7 +220,7 @@ export const softwareAIAnnotations = [
     }
   },
   {
-    src: "https://reintenspark.com/wp-content/uploads/2025/01/audio-annotation.png",
+    src: "/images/projects/ai-annotations/audio-annotation.png",
     alt: "Audio annotation for speech recognition and sound classification",
     label: "Audio Annotation",
     details: {

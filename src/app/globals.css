@@ -136,20 +136,20 @@ a {
   width: min(100vw, 1600px);
   margin-inline: auto;
   padding-inline: clamp(1rem, 3vw, 2rem);
-  padding-top: 14rem;
+  padding-top: 11.5rem;
   padding-bottom: clamp(3rem, 6vw, 7rem);
 }
 
 @media (min-width: 640px) {
   .site-main {
-    padding-top: 13.5rem;
+    padding-top: 10.5rem;
     width: min(98vw, 1600px);
   }
 }
 
 @media (min-width: 1024px) {
   .site-main {
-    padding-top: 12.5rem;
+    padding-top: 9.5rem;
   }
 }
 
@@ -170,8 +170,10 @@ a {
   color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
-  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .nav-link:hover,
@@ -180,12 +182,14 @@ a {
   background: var(--color-primary);
   border-color: transparent;
   box-shadow: var(--shadow-neon-soft);
+  transform: translateZ(0) translateY(-1px);
 }
 
 .nav-link--active {
   color: var(--color-primary);
   border-color: var(--color-primary);
   background: rgba(57, 255, 20, 0.12);
+  transform: translateZ(0);
 }
 
 .shadow-neon {
@@ -268,4 +272,24 @@ a {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Performance optimizations */
+button,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

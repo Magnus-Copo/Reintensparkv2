@@ -248,12 +248,6 @@ export default function SoftwareIoTPage() {
             </motion.div>
           ))}
         </div>
-
-        {/* Results Count */}
-        <div className="mt-6 text-center text-sm text-white/50">
-          Showing {filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'}
-          {activeFilter !== "all" && ` in ${filterCategories.find(c => c.id === activeFilter)?.label}`}
-        </div>
       </section>
 
       <ProjectModal 

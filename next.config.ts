@@ -23,6 +23,48 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ['framer-motion', 'react-icons'],
+    // Speed up development compilation
+    optimizeCss: false, // Disable in dev for faster builds
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Faster dev compilation
+  webpack: (config, { dev, isServer }) => {
+    if (dev && !isServer) {
+      config.cache = {
+        type: 'filesystem',
+        buildDependencies: {
+          config: [__filename],
+        },
+      };
+      // Reduce module resolution time
+      config.resolve = {
+        ...config.resolve,
+        symlinks: false,
+      };
+    }
+    return config;
+  },
+  // Optimize dev server
+  ...(process.env.NODE_ENV === 'development' && {
+    onDemandEntries: {
+      // Period (in ms) where the server will keep pages in the buffer
+      maxInactiveAge: 60 * 1000,
+      // Number of pages that should be kept simultaneously without being disposed
+      pagesBufferLength: 5,
+    },
+  }),
 };
 
 export default nextConfig;
