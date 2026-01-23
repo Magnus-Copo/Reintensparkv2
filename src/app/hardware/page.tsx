@@ -405,11 +405,6 @@ const roboticsGallery: CategorizedProject[] = [
 export default function HardwarePage() {
   const [selectedProject, setSelectedProject] = useState<CategorizedProject | null>(null);
   const [activeFilter, setActiveFilter] = useState<FilterCategory>("all");
-  const [isMounted, setIsMounted] = useState(false);
-  
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   // Combine all projects with their categories
   const allProjects = useMemo(() => [
@@ -508,11 +503,9 @@ export default function HardwarePage() {
             <motion.button
               key={`${project.category}-${project.label}-${index}`}
               type="button"
-              initial={isMounted ? { opacity: 0, scale: 0.95 } : false}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
-                duration: 0.2,
-                delay: isMounted ? index * 0.03 : 0
+                duration: 0.2
               }}
               className="group relative cursor-pointer overflow-hidden rounded-[24px] border border-white/10 bg-card/50 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(57,255,20,0.3)] text-left"
               onClick={() => setSelectedProject(project)}
@@ -532,9 +525,7 @@ export default function HardwarePage() {
                   {/* Category Badge */}
                   <motion.div 
                     className="absolute top-3 right-3 rounded-full bg-primary/90 px-3 py-1 text-xs font-semibold uppercase text-black backdrop-blur-sm"
-                    initial={isMounted ? { opacity: 0, x: 20 } : false}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: isMounted ? index * 0.05 + 0.2 : 0 }}
                   >
                     {project.category}
                   </motion.div>
