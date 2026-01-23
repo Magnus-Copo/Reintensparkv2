@@ -239,7 +239,7 @@ export default function SoftwareIoTPage() {
               key={`${project.category}-${project.label}-${index}`}
               initial={isMounted ? { opacity: 0, scale: 0.95 } : false}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2, delay: isMounted ? index * 0.03 : 0 }}
+              transition={{ duration: 0.2, delay: isMounted ? index * 0.02 : 0 }}
             >
               <ProjectItem
                 project={project}
