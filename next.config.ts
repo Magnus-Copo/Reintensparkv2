@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  allowedDevOrigins: ['192.168.*.*', '10.*.*.*', '172.16.*.*'],
   turbopack: {},
   experimental: {
     optimizePackageImports: ['framer-motion', 'react-icons'],
