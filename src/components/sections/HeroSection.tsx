@@ -87,7 +87,7 @@ export const HeroSection = memo(function HeroSection() {
             className="hidden md:flex justify-center items-center order-2 min-h-[500px] lg:min-h-[600px]"
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.15 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <div className="w-full max-w-xl lg:max-w-none">
               <HeroShowcase />

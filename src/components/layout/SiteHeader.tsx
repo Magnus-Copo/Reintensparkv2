@@ -77,10 +77,10 @@ export function SiteHeader() {
             <Image
               src="/reinternspark-logo.svg"
               width={isScrolled ? 85 : 140}
-              height={isScrolled ? 24 : 38}
+              height={isScrolled ? 85 : 140}
               alt="Reinternspark logo"
               priority
-              style={{ objectFit: 'contain', height: 'auto' }}
+              style={{ width: isScrolled ? '85px' : '140px', height: 'auto', objectFit: 'contain' }}
               className={cn(
                 "transition-all duration-200 drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]",
                 !isScrolled && "scale-110 origin-left"

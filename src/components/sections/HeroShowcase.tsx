@@ -53,7 +53,7 @@ export function HeroShowcase() {
             key={slide.lottieUrl}
             src={slide.lottieUrl}
             title={`${slide.title} animation`}
-            loading="lazy"
+            loading={slideIndex === 0 ? "eager" : "lazy"}
             className={cn(
               "absolute inset-0 h-full w-full rounded-2xl sm:rounded-3xl transition-opacity duration-700",
               slideIndex === index ? "opacity-100" : "opacity-0 pointer-events-none"

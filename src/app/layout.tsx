@@ -11,7 +11,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
-  display: "optional",
+  display: "swap",
   preload: true,
   fallback: ["system-ui", "sans-serif"],
 });
@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-space-grotesk",
-  display: "optional",
+  display: "swap",
   preload: true,
   fallback: ["system-ui", "sans-serif"],
 });
@@ -29,7 +29,7 @@ const unbounded = Unbounded({
   subsets: ["latin"],
   weight: ["600"],
   variable: "--font-unbounded",
-  display: "optional",
+  display: "swap",
   preload: true,
   fallback: ["system-ui", "sans-serif"],
 });
@@ -76,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

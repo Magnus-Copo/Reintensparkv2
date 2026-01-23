@@ -138,7 +138,15 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Reinternspark Technology
           </div>
           <div className="text-center sm:text-right">
-            Powered by Magnus Copo
+            Powered by{" "}
+            <Link
+              href="https://magnuscopo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors duration-200 hover:underline"
+            >
+              Magnus Copo
+            </Link>
           </div>
         </div>
       </div>

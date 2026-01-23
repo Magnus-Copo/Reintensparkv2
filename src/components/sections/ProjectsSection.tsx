@@ -71,7 +71,7 @@ const ProjectGalleryItem = memo(function ProjectGalleryItem({
           sizes="(min-width: 1024px) 480px, (min-width: 640px) 45vw, 90vw"
           className="object-contain"
           loading="lazy"
-          quality={85}
+          quality={75}
         />
       </div>
       <div className="px-5 pb-4 pt-2">
