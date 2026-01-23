@@ -10,14 +10,14 @@ import {
 export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-white/5 bg-black/70">
-      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8">
+      <div className="mx-auto max-w-[1600px] py-20 px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="flex flex-col gap-16 items-center lg:flex-row lg:justify-between lg:items-start lg:gap-20 xl:gap-24">
           {/* Social Media Section - Centered on mobile, left aligned on desktop */}
-          <div className="space-y-4 lg:max-w-xs text-center lg:text-left">
-            <p className="text-xs uppercase tracking-[0.6em] text-primary">
+          <div className="space-y-6 lg:max-w-sm w-full lg:w-auto flex flex-col items-center lg:block lg:flex-shrink-0">
+            <p className="text-sm uppercase tracking-[0.6em] text-primary text-center lg:text-left">
               Reinternspark Technology
             </p>
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="flex gap-5 justify-center lg:justify-start">
             {socialLinks.map((link) => {
               const isInstagram = link.label === "Instagram";
               const isLinkedIn = link.label === "LinkedIn";
@@ -54,17 +54,17 @@ export function SiteFooter() {
           </div>
 
           {/* Navigation Links - Middle section - Centered on mobile */}
-          <div className="grid grid-cols-1 gap-8 text-base text-white sm:grid-cols-2 sm:gap-24 lg:gap-32 text-center lg:text-left">
-          <div>
-            <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+          <div className="flex flex-col gap-10 text-base text-white w-full lg:w-auto items-center md:flex-row md:gap-16 lg:grid lg:grid-cols-2 lg:gap-24 xl:gap-32 lg:items-center lg:flex-grow lg:justify-center lg:px-8 lg:ml-[-3rem] xl:ml-[-4rem]">
+          <div className="w-full md:w-auto flex flex-col items-center lg:items-center">
+            <h4 className="text-lg uppercase tracking-[0.5em] text-white mb-5 font-semibold text-center">
               Navigation
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4 flex flex-col items-center">
               {footerNavLinks.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className="text-center">
                   <Link
                     href={item.href}
-                    className="transition hover:text-primary text-[15px]"
+                    className="transition hover:text-primary text-base"
                   >
                     {item.label}
                   </Link>
@@ -72,16 +72,16 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
-          <div>
-            <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+          <div className="w-full md:w-auto flex flex-col items-center lg:items-center">
+            <h4 className="text-lg uppercase tracking-[0.35em] text-white mb-5 font-semibold text-center whitespace-nowrap">
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-4 flex flex-col items-center">
               {quickLinks.map((item) => (
-                <li key={item.href}>
+                <li key={item.href} className="text-center">
                   <Link
                     href={item.href}
-                    className="transition hover:text-primary text-[15px]"
+                    className="transition hover:text-primary text-base"
                   >
                     {item.label}
                   </Link>
@@ -92,36 +92,36 @@ export function SiteFooter() {
         </div>
 
         {/* Contact Section - Centered on mobile, right aligned on desktop */}
-        <div className="text-base text-white lg:max-w-xs lg:ml-auto text-center lg:text-left">
-          <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
+        <div className="text-base text-white w-full lg:max-w-sm lg:ml-auto flex flex-col items-center lg:block lg:flex-shrink-0 lg:pl-8 xl:pl-12">
+          <h4 className="text-lg uppercase tracking-[0.5em] text-white mb-5 font-semibold text-center lg:text-left">
             Contact
           </h4>
-          <div className="space-y-3">
-            <p className="text-white">
+          <div className="space-y-4 flex flex-col items-center lg:block">
+            <p className="text-white text-center lg:text-left max-w-xs text-base">
               {contactChannels.address}
             </p>
-            <div>
-              <p className="text-white">Phone</p>
-              <div className="space-y-1">
+            <div className="flex flex-col items-center lg:block w-full">
+              <p className="text-white text-center lg:text-left mb-2 text-base font-medium">Phone</p>
+              <div className="space-y-2 flex flex-col items-center lg:block">
                 {contactChannels.phones.map((phone) => (
                   <a
                     key={phone}
                     href={`tel:${phone.replaceAll(/\s+/g, "")}`}
-                    className="block text-white transition hover:text-primary"
+                    className="text-white transition hover:text-primary block text-center lg:text-left text-base"
                   >
                     {phone}
                   </a>
                 ))}
               </div>
             </div>
-            <div>
-              <p className="text-white">Email</p>
-              <div className="space-y-1">
+            <div className="flex flex-col items-center lg:block w-full">
+              <p className="text-white text-center lg:text-left mb-2 text-base font-medium">Email</p>
+              <div className="space-y-2 flex flex-col items-center lg:block">
                 {contactChannels.emails.map((mail) => (
                   <a
                     key={mail}
                     href={`mailto:${mail}`}
-                    className="block text-white transition hover:text-primary"
+                    className="text-white transition hover:text-primary block text-center lg:text-left text-base"
                   >
                     {mail}
                   </a>
@@ -132,8 +132,8 @@ export function SiteFooter() {
         </div>
       </div>
       </div>
-      <div className="border-t border-white/10 py-6">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row justify-between items-center gap-4 text-base uppercase tracking-[0.4em] text-white">
+      <div className="border-t border-white/10 py-8">
+        <div className="mx-auto max-w-[1600px] px-6 sm:px-8 lg:px-12 xl:px-16 flex flex-col sm:flex-row justify-between items-center gap-5 text-sm sm:text-base uppercase tracking-[0.4em] text-white">
           <div className="text-center sm:text-left">
             © {new Date().getFullYear()} Reinternspark Technology
           </div>

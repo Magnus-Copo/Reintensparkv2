@@ -67,7 +67,7 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[60] transform-gpu">
+    <header className="fixed inset-x-0 top-0 z-[60] transform-gpu will-change-transform">
       <div className={cn(
         "mx-auto transition-[max-width,padding] duration-200 ease-[cubic-bezier(0.25,0.1,0.25,1)] relative z-[60]",
         isScrolled 
@@ -89,6 +89,7 @@ export function SiteHeader() {
               height={isScrolled ? 85 : 140}
               alt="Reinternspark logo"
               priority
+              fetchPriority="high"
               style={{ width: isScrolled ? '85px' : '140px', height: 'auto', objectFit: 'contain' }}
               className={cn(
                 "transition-all duration-200 drop-shadow-[0_2px_4px_rgba(255,255,255,0.3)]",

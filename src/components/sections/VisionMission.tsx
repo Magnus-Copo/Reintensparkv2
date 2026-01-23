@@ -54,11 +54,11 @@ const cards = [
 
 export function VisionMissionSection() {
   return (
-    <section className="mt-20 grid gap-5 sm:gap-6 md:grid-cols-2" id="vision">
+    <section className="mt-8 sm:mt-16 lg:mt-20 grid gap-4 sm:gap-6 md:grid-cols-2 px-2 sm:px-0" id="vision">
       {cards.map((card, index) => (
         <motion.article
           key={card.title}
-          className="group relative overflow-hidden rounded-2xl sm:rounded-[32px] border border-white/10 bg-card/70 p-6 sm:p-8 text-white shadow-[0_30px_100px_rgba(5,15,30,0.65)] text-center md:text-left"
+          className="group relative overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-[32px] border border-white/10 bg-card/70 p-5 sm:p-6 lg:p-8 text-white shadow-[0_30px_100px_rgba(5,15,30,0.65)] text-center md:text-left"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}

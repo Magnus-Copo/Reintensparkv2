@@ -7,7 +7,7 @@ import { CoursesTeaserSection } from "@/components/sections/CoursesTeaserSection
 
 export default function Home() {
   return (
-    <div className="space-y-12 lg:space-y-16">
+    <div className="space-y-6 sm:space-y-10 lg:space-y-16">
       <HeroSection />
       <AboutSection />
       <VisionMissionSection />

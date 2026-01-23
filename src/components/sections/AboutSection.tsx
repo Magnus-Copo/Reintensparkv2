@@ -85,7 +85,7 @@ const icons = [
 export function AboutSection() {
   return (
     <motion.section 
-      className="mt-20 grid gap-6 sm:gap-8 rounded-3xl sm:rounded-[36px] border border-white/5 bg-surface/80 p-5 sm:p-8 lg:grid-cols-[1.3fr_1fr] lg:p-10 shadow-[0_40px_120px_rgba(3,8,20,0.7)]"
+      className="mt-8 sm:mt-16 lg:mt-20 grid gap-5 sm:gap-8 rounded-2xl sm:rounded-3xl lg:rounded-[36px] border border-white/5 bg-surface/80 p-4 sm:p-6 lg:grid-cols-[1.3fr_1fr] lg:p-10 shadow-[0_40px_120px_rgba(3,8,20,0.7)] mx-2 sm:mx-0"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
