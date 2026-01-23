@@ -54,11 +54,11 @@ const cards = [
 
 export function VisionMissionSection() {
   return (
-    <section className="mt-20 grid gap-6 md:grid-cols-2" id="vision">
+    <section className="mt-20 grid gap-5 sm:gap-6 md:grid-cols-2" id="vision">
       {cards.map((card, index) => (
         <motion.article
           key={card.title}
-          className="group relative overflow-hidden rounded-[32px] border border-white/10 bg-card/70 p-8 text-white shadow-[0_30px_100px_rgba(5,15,30,0.65)] text-center md:text-left"
+          className="group relative overflow-hidden rounded-2xl sm:rounded-[32px] border border-white/10 bg-card/70 p-6 sm:p-8 text-white shadow-[0_30px_100px_rgba(5,15,30,0.65)] text-center md:text-left"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -74,14 +74,14 @@ export function VisionMissionSection() {
           />
           <div className="relative z-10">
             <motion.div 
-              className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/40 text-primary md:mx-0 transition-all group-hover:border-primary/40 group-hover:bg-primary/10"
+              className="mx-auto flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl border border-white/10 bg-black/40 text-primary md:mx-0 transition-all group-hover:border-primary/40 group-hover:bg-primary/10"
               whileHover={{ rotate: 360, scale: 1.1 }}
               transition={{ duration: 0.4 }}
             >
               {card.icon}
             </motion.div>
             <motion.h3 
-              className="mt-6 text-2xl font-semibold"
+              className="mt-5 sm:mt-6 text-xl sm:text-2xl font-semibold leading-tight"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -90,7 +90,7 @@ export function VisionMissionSection() {
               {card.title}
             </motion.h3>
             <motion.p 
-              className="mt-4 text-white/70 leading-relaxed"
+              className="mt-3 sm:mt-4 text-[0.875rem] sm:text-base text-white/75 leading-[1.65] text-left md:text-left"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

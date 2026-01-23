@@ -85,7 +85,7 @@ const icons = [
 export function AboutSection() {
   return (
     <motion.section 
-      className="mt-20 grid gap-8 rounded-[36px] border border-white/5 bg-surface/80 p-6 shadow-[0_40px_120px_rgba(3,8,20,0.7)] sm:p-8 lg:grid-cols-[1.3fr_1fr] lg:p-10"
+      className="mt-20 grid gap-6 sm:gap-8 rounded-3xl sm:rounded-[36px] border border-white/5 bg-surface/80 p-5 sm:p-8 lg:grid-cols-[1.3fr_1fr] lg:p-10 shadow-[0_40px_120px_rgba(3,8,20,0.7)]"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
@@ -105,22 +105,22 @@ export function AboutSection() {
         {pillars.map((pillar, index) => (
           <motion.div
             key={pillar.label}
-            className="rounded-[24px] border border-white/10 bg-card/70 p-4 text-center group cursor-default"
+            className="rounded-2xl sm:rounded-[24px] border border-white/10 bg-card/70 p-4 text-center group cursor-default"
             variants={fadeInUp}
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <motion.div 
-              className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/40 text-primary transition-all group-hover:border-primary/40 group-hover:bg-primary/10"
+              className="mx-auto flex h-12 w-12 sm:h-14 sm:w-14 items-center justify-center rounded-2xl border border-white/10 bg-black/40 text-primary transition-all group-hover:border-primary/40 group-hover:bg-primary/10"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.4 }}
             >
               {icons[index]}
             </motion.div>
-            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.3em] text-white">
+            <p className="mt-3 sm:mt-4 text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white">
               {pillar.label}
             </p>
-            <p className="mt-2 text-sm text-white/70 text-center leading-relaxed">{pillar.description}</p>
+            <p className="mt-2 text-[0.8rem] sm:text-sm text-white/75 text-left sm:text-center leading-[1.6]">{pillar.description}</p>
           </motion.div>
         ))}
       </motion.div>

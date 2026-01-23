@@ -52,14 +52,14 @@ export const scaleIn: Variants = {
   }
 };
 
-// Optimized stagger children
+// Optimized stagger children - faster for LCP
 export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.05,
+      staggerChildren: 0.05,
+      delayChildren: 0,
       ease: [0.25, 0.1, 0.25, 1]
     }
   }
@@ -78,20 +78,20 @@ export const cardHover: Variants = {
   }
 };
 
-// Button hover effect
+// Button hover effect - optimized for INP
 export const buttonHover: Variants = {
   rest: { scale: 1 },
   hover: { 
-    scale: 1.05,
+    scale: 1.02,
     transition: {
-      duration: 0.2,
-      ease: [0.25, 0.1, 0.25, 1]
+      duration: 0.15,
+      ease: "easeOut"
     }
   },
   tap: { 
     scale: 0.98,
     transition: {
-      duration: 0.1
+      duration: 0.05
     }
   }
 };

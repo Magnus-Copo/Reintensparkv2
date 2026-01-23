@@ -10,14 +10,14 @@ import {
 export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-white/5 bg-black/70">
-      <div className="mx-auto max-w-7xl py-16">
+      <div className="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8">
-          {/* Social Media Section - Left aligned */}
-          <div className="space-y-4 lg:max-w-xs">
+          {/* Social Media Section - Centered on mobile, left aligned on desktop */}
+          <div className="space-y-4 lg:max-w-xs text-center lg:text-left">
             <p className="text-xs uppercase tracking-[0.6em] text-primary">
               Reinternspark Technology
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center lg:justify-start">
             {socialLinks.map((link) => {
               const isInstagram = link.label === "Instagram";
               const isLinkedIn = link.label === "LinkedIn";
@@ -53,8 +53,8 @@ export function SiteFooter() {
             </div>
           </div>
 
-          {/* Navigation Links - Middle section */}
-          <div className="grid grid-cols-1 gap-8 text-base text-white sm:grid-cols-2 sm:gap-24 lg:gap-32">
+          {/* Navigation Links - Middle section - Centered on mobile */}
+          <div className="grid grid-cols-1 gap-8 text-base text-white sm:grid-cols-2 sm:gap-24 lg:gap-32 text-center lg:text-left">
           <div>
             <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
               Navigation
@@ -91,8 +91,8 @@ export function SiteFooter() {
           </div>
         </div>
 
-        {/* Contact Section - Right aligned */}
-        <div className="text-base text-white lg:max-w-xs lg:ml-auto">
+        {/* Contact Section - Centered on mobile, right aligned on desktop */}
+        <div className="text-base text-white lg:max-w-xs lg:ml-auto text-center lg:text-left">
           <h4 className="text-base uppercase tracking-[0.5em] text-white mb-4 font-semibold">
             Contact
           </h4>

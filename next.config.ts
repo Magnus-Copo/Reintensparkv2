@@ -31,6 +31,10 @@ const nextConfig: NextConfig = {
     optimizeCss: false, // Disable in dev for faster builds
     // Enable modern optimizations
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB', 'INP'],
+    // Optimize server actions
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

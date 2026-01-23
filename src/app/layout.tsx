@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { PageTransition } from "@/components/ui/PageTransition";
 import { LoadingBar } from "@/components/ui/LoadingBar";
+import { WebVitals } from "./web-vitals";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -14,6 +15,7 @@ const poppins = Poppins({
   display: "swap",
   preload: true,
   fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -21,8 +23,9 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600"],
   variable: "--font-space-grotesk",
   display: "swap",
-  preload: true,
+  preload: false,
   fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 const unbounded = Unbounded({
@@ -30,8 +33,9 @@ const unbounded = Unbounded({
   weight: ["600"],
   variable: "--font-unbounded",
   display: "swap",
-  preload: true,
+  preload: false,
   fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 export const viewport = {
@@ -80,9 +84,10 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://lottie.host" />
+        <link rel="preconnect" href="https://lottie.host" />
       </head>
       <body className={`${poppins.variable} ${spaceGrotesk.variable} ${unbounded.variable} antialiased`}>
+        <WebVitals />
         <LoadingBar />
         <div className="site-shell">
           <div className="site-shell__glow" aria-hidden="true" />

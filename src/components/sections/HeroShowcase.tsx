@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, memo } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -31,10 +31,12 @@ const slides = [
   },
 ];
 
-export function HeroShowcase() {
+export const HeroShowcase = memo(function HeroShowcase() {
   const [index, setIndex] = useState(0);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const id = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
     }, 5000);
@@ -42,7 +44,7 @@ export function HeroShowcase() {
     return () => clearInterval(id);
   }, []);
 
-  const active = slides[index];
+  const active = useMemo(() => slides[index], [index]);
 
   return (
     <div className="relative flex w-full max-w-3xl flex-col gap-4 sm:gap-6 overflow-hidden rounded-2xl sm:rounded-[32px] border border-white/10 bg-white/5 p-4 sm:p-8 text-white/80 fade-up fade-delay-2 mx-auto lg:mx-0">
@@ -55,7 +57,7 @@ export function HeroShowcase() {
             title={`${slide.title} animation`}
             loading={slideIndex === 0 ? "eager" : "lazy"}
             className={cn(
-              "absolute inset-0 h-full w-full rounded-2xl sm:rounded-3xl transition-opacity duration-700",
+              "absolute inset-0 h-full w-full rounded-2xl sm:rounded-3xl transition-opacity duration-500",
               slideIndex === index ? "opacity-100" : "opacity-0 pointer-events-none"
             )}
             allowFullScreen
@@ -91,4 +93,4 @@ export function HeroShowcase() {
       </div>
     </div>
   );
-}
+});
