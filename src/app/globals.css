@@ -34,6 +34,11 @@ img, video, iframe {
   content-visibility: auto;
 }
 
+/* Reserve space for images to prevent CLS */
+img[width][height] {
+  height: auto;
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -48,6 +53,8 @@ img, video, iframe {
 /* GPU acceleration for animations */
 .will-change-transform {
   will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .will-change-opacity {

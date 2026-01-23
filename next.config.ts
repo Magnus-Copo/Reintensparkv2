@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
-    qualities: [100, 75],
+    qualities: [100, 90, 85, 75],
   },
   compress: true,
   poweredByHeader: false,
@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['framer-motion', 'react-icons'],
     // Speed up development compilation
     optimizeCss: false, // Disable in dev for faster builds
+    // Enable modern optimizations
+    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB', 'INP'],
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
