@@ -23,18 +23,11 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
+  turbopack: {},
   experimental: {
     optimizePackageImports: ['framer-motion', 'react-icons'],
     // Speed up development compilation
     optimizeCss: false, // Disable in dev for faster builds
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
