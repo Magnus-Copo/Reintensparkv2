@@ -7,7 +7,7 @@ import { ReactNode, useState, useEffect } from "react";
 export function PageTransition({ children }: Readonly<{ children: ReactNode }>) {
   const pathname = usePathname();
   const [isFirstRender, setIsFirstRender] = useState(true);
-  
+
   useEffect(() => {
     // After first render, enable animations for subsequent navigations
     if (isFirstRender) {
@@ -21,20 +21,17 @@ export function PageTransition({ children }: Readonly<{ children: ReactNode }>) 
   }, [pathname]);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={isFirstRender ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{
-          duration: 0.15, // Reduced from 0.25s for faster perceived navigation
-          ease: [0.22, 0.61, 0.36, 1], // Smooth fast easing
-        }}
-        style={{ willChange: "opacity" }} // Browser optimization hint
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <motion.div
+      key={pathname}
+      initial={isFirstRender ? false : { opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
+      className="min-h-screen w-full"
+    >
+      {children}
+    </motion.div>
   );
 }
