@@ -97,7 +97,7 @@ export function SiteFooter() {
             Contact
           </h4>
           <div className="space-y-4 flex flex-col items-center lg:block">
-            <p className="text-white text-center lg:text-left max-w-xs text-base">
+            <p className="text-white text-center lg:text-left w-full px-4 sm:px-6 lg:px-0 lg:max-w-xs text-base leading-relaxed">
               {contactChannels.address}
             </p>
             <div className="flex flex-col items-center lg:block w-full">

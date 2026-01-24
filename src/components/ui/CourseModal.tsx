@@ -76,20 +76,18 @@ export function CourseModal({ course, onClose }: CourseModalProps) {
           transition={{ type: "spring", stiffness: 300, damping: 25 }}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button - Sticky Position */}
-          <div className="sticky top-0 z-50 flex justify-end p-4">
-            <button
-              onClick={onClose}
-              className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/70 bg-black/70 text-white hover:bg-primary hover:text-black hover:rotate-90 transition-all duration-300 backdrop-blur-sm shadow-[0_0_15px_rgba(57,255,20,0.4)]"
-            >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          {/* Close Button - Absolute Position */}
+          <button
+            onClick={onClose}
+            className="absolute right-4 top-4 sm:right-6 sm:top-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border-2 border-primary/70 bg-black/70 text-white hover:bg-primary hover:text-black hover:rotate-90 transition-all duration-300 backdrop-blur-sm shadow-[0_0_15px_rgba(57,255,20,0.4)]"
+          >
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
           {/* Scrollable Content */}
-          <div className="max-h-[calc(90vh-80px)] overflow-y-auto px-6 pb-6 sm:px-8 sm:pb-8 lg:px-12 lg:pb-12">
+          <div className="max-h-[calc(90vh)] overflow-y-auto px-6 pt-20 pb-6 sm:px-8 sm:pt-20 sm:pb-8 lg:px-12 lg:pb-12">
             {/* Content */}
             <div>
               {/* Header */}
