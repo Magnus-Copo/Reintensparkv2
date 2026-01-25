@@ -37,6 +37,6 @@ export const contactChannels = {
 
 export const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/reintenspark_technology" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/reintenspark" },
-  { label: "Facebook", href: "https://www.facebook.com/reintenspark" },
+  { label: "LinkedIn", href: "https://in.linkedin.com/company/reintenspark-technology-private-limited" },
+  { label: "Facebook", href: "https://www.facebook.com/61558738370821/about/" },
 ];
