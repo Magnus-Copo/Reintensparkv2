@@ -19,8 +19,27 @@ export function SiteHeader() {
   const ticking = useRef(false);
 
   useEffect(() => {
-    document.body.classList.toggle("overflow-hidden", isMenuOpen);
-    return () => document.body.classList.remove("overflow-hidden");
+    if (isMenuOpen) {
+      // Prevent scrolling on both html and body
+      document.documentElement.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden';
+      // Prevent touch scrolling on mobile
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      // Restore scrolling
+      const scrollY = document.body.style.top;
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
   }, [isMenuOpen]);
 
   useEffect(() => {
@@ -188,40 +207,45 @@ export function SiteHeader() {
         className={cn(
           "lg:hidden relative z-50",
           "origin-top overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
-          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className={cn(
-          "mx-auto rounded-3xl border-2 border-primary/20 bg-gradient-to-b from-slate-900/95 via-slate-950/95 to-black/95 backdrop-blur-xl p-6 shadow-2xl shadow-primary/10",
-          "transition-[margin,width] duration-300 ease-out",
+          "mx-auto rounded-3xl border-2 border-primary/20 bg-gradient-to-b from-slate-900/95 via-slate-950/95 to-black/95 backdrop-blur-xl shadow-2xl shadow-primary/10",
+          "transition-[margin,width] duration-300 ease-out overflow-hidden",
           isScrolled ? "mt-2 w-[92%]" : "mt-3 w-[95%]"
         )}>
-          <div className="flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                prefetch={true}
-                className={cn(
-                  "rounded-2xl px-5 py-3.5 text-center transition-all duration-150 text-sm uppercase tracking-[0.25em] font-medium touch-manipulation",
-                  isActive(link.href)
-                    ? "bg-primary/20 text-primary border-2 border-primary/40 shadow-md shadow-primary/20"
-                    : "text-white/90 hover:bg-white/10 hover:text-white border-2 border-white/5 hover:border-white/20"
-                )}
+          <div 
+            className="p-6 pb-8 max-h-[500px] overflow-y-auto overflow-x-hidden"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
+            <div className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  prefetch={true}
+                  className={cn(
+                    "rounded-2xl px-5 py-3.5 text-center transition-all duration-150 text-sm uppercase tracking-[0.25em] font-medium touch-manipulation",
+                    isActive(link.href)
+                      ? "bg-primary/20 text-primary border-2 border-primary/40 shadow-md shadow-primary/20"
+                      : "text-white/90 hover:bg-white/10 hover:text-white border-2 border-white/5 hover:border-white/20"
+                  )}
+                  onClick={closeMenu}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-5 pt-4 border-t border-white/10 mb-4">
+              <NeonButton
+                href="/contact"
+                className="w-full justify-center py-3.5 text-sm font-semibold"
                 onClick={closeMenu}
               >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-          <div className="mt-5 pt-4 border-t border-white/10">
-            <NeonButton
-              href="/contact"
-              className="w-full justify-center py-3.5 text-sm font-semibold"
-              onClick={closeMenu}
-            >
-              Contact Us
-            </NeonButton>
+                Contact Us
+              </NeonButton>
+            </div>
           </div>
         </div>
       </div>
