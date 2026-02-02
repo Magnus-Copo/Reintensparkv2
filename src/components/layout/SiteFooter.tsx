@@ -54,11 +54,11 @@ export function SiteFooter() {
           </div>
 
           {/* Navigation Section */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start mt-6 md:mt-0">
             <h4 className="text-base sm:text-lg uppercase tracking-[0.4em] sm:tracking-[0.5em] text-white mb-4 sm:mb-5 font-semibold text-center md:text-left">
               Navigation
             </h4>
-            <ul className="space-y-3 sm:space-y-4 flex flex-col items-center pl-6 sm:pl-8 md:pl-10 lg:pl-12">
+            <ul className="space-y-3 sm:space-y-4 flex flex-col items-center md:pl-10 lg:pl-12">
               {footerNavLinks.map((item) => (
                 <li key={item.href} className="text-center">
                   <Link
@@ -77,7 +77,7 @@ export function SiteFooter() {
             <h4 className="text-base sm:text-lg uppercase tracking-[0.3em] sm:tracking-[0.35em] text-white mb-4 sm:mb-5 font-semibold text-center md:text-left whitespace-nowrap">
               Quick Links
             </h4>
-            <ul className="space-y-3 sm:space-y-4 flex flex-col items-center pl-6 sm:pl-8 md:pl-10 lg:pl-12">
+            <ul className="space-y-3 sm:space-y-4 flex flex-col items-center md:pl-10 lg:pl-12">
               {quickLinks.map((item) => (
                 <li key={item.href} className="text-center">
                   <Link
