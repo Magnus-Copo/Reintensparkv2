@@ -163,20 +163,47 @@ npm start
 
 ## 6. Deployment Procedure
 
-The application is designed to be deployed on platforms like **Vercel**, **Netlify**, or any Node.js hosting.
+The application is configured for seamless deployment on **Netlify**, utilizing the `netlify.toml` configuration file for build settings.
 
-### Vercel Deployment (Recommended)
-1.  Push your code to a Git repository (GitHub/GitLab/Bitbucket).
-2.  Import the project in Vercel.
-3.  Vercel will automatically detect Next.js.
-4.  **Crucial**: Go to **Settings > Environment Variables** and add all the keys from your `.env.local` file (`SMTP_HOST`, `SMTP_USER`, etc.).
-5.  Click **Deploy**.
+### 1. GitHub Integration (Prerequisite)
+Ensure your local code is pushed to a GitHub repository:
+1.  Initialize Git: `git init`
+2.  Add files: `git add .`
+3.  Commit changes: `git commit -m "Initial commit"`
+4.  Create a repo on GitHub and link it:
+    ```bash
+    git remote add origin <your-github-repo-url>
+    git branch -M main
+    git push -u origin main
+    ```
 
-### Manual Deployment
-1.  Run `npm run build`.
-2.  Upload the contents of the project to your server.
-3.  Install dependencies with `npm install --production`.
-4.  Start the server with `npm start` (use a process manager like PM2 for persistence).
+### 2. Netlify Deployment (Recommended)
+This project includes a `netlify.toml` file that automatically configures build settings and caching headers.
+
+1.  **Log in to Netlify**: Go to [app.netlify.com](https://app.netlify.com) and log in.
+2.  **Add New Site**: Click **"Add new site"** > **"Import an existing project"**.
+3.  **Connect to GitHub**: Select GitHub as your provider and authorize Netlify.
+4.  **Select Repository**: Choose the `reinternspark-site` repository.
+5.  **Configure Build**:
+    *   Netlify should automatically detect the settings from `netlify.toml`.
+    *   **Build Command**: `npm ci && npm run build`
+    *   **Publish Directory**: `.next`
+    *   *Note: If these populate differently, ensure they match the values above.*
+6.  **Environment Variables**:
+    *   Click usually "Show advanced" or go to Site Settings after creation.
+    *   **Crucial**: You MUST add the Environment Variables from your `.env.local` to Netlify.
+    *   Keys: `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `SMTP_SECURE`, `SMTP_FROM`, `SMTP_TO`.
+7.  **Deploy**: Click **"Deploy Site"**.
+
+### 3. Automatic Deployments
+Once connected, every `git push` to the `main` branch will automatically trigger a new deployment on Netlify. You can monitor build status in the "Deploys" tab in Netlify.
+
+### Manual Deployment (CLI)
+You can also deploy manually using the Netlify CLI:
+1.  Install CLI: `npm install netlify-cli -g`
+2.  Login: `netlify login`
+3.  Link: `netlify link`
+4.  Deploy: `netlify deploy --prod`
 
 ---
 
