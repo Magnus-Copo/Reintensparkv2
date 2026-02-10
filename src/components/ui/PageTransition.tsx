@@ -16,8 +16,8 @@ export function PageTransition({ children }: Readonly<{ children: ReactNode }>) 
   }, [pathname, isFirstRender]);
 
   useEffect(() => {
-    // Smooth scroll to top on route change
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // Instant scroll to top on route change for faster navigation
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname]);
 
   return (
@@ -26,7 +26,7 @@ export function PageTransition({ children }: Readonly<{ children: ReactNode }>) 
       initial={isFirstRender ? false : { opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: 0.3,
+        duration: 0.15,
         ease: "easeOut",
       }}
       className="min-h-screen w-full"

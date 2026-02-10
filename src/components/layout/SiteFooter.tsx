@@ -63,6 +63,7 @@ export function SiteFooter() {
                 <li key={item.href} className="text-center">
                   <Link
                     href={item.href}
+                    prefetch={true}
                     className="transition hover:text-primary text-sm sm:text-base text-white/90"
                   >
                     {item.label}
@@ -82,6 +83,7 @@ export function SiteFooter() {
                 <li key={item.href} className="text-center">
                   <Link
                     href={item.href}
+                    prefetch={true}
                     className="transition hover:text-primary text-sm sm:text-base text-white/90"
                   >
                     {item.label}

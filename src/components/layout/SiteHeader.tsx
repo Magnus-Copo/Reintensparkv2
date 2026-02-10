@@ -206,13 +206,13 @@ export function SiteHeader() {
         id={MOBILE_MENU_ID}
         className={cn(
           "lg:hidden relative z-50",
-          "origin-top overflow-hidden transition-[max-height,opacity] duration-300 ease-out",
+          "origin-top overflow-hidden transition-[max-height,opacity] duration-200 ease-out",
           isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className={cn(
           "mx-auto rounded-3xl border-2 border-primary/20 bg-gradient-to-b from-slate-900/95 via-slate-950/95 to-black/95 backdrop-blur-xl shadow-2xl shadow-primary/10",
-          "transition-[margin,width] duration-300 ease-out overflow-hidden",
+          "transition-[margin,width] duration-200 ease-out overflow-hidden",
           isScrolled ? "mt-2 w-[92%]" : "mt-3 w-[95%]"
         )}>
           <div 

@@ -32,6 +32,7 @@ export function CoursesTeaserSection() {
             <p className="mt-3 text-sm text-white/70 text-center lg:text-left leading-relaxed">{course.focus}</p>
             <Link
               href="/courses"
+              prefetch={true}
               className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary mx-auto lg:mx-0"
             >
               View Details →
